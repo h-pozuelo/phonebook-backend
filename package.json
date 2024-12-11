@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../phonebook && npm run build && cp -r dist ../phonebook-backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m 'fulldeploy' && git push -u",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
