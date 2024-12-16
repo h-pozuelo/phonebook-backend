@@ -4,6 +4,7 @@ import pluginJs from "@eslint/js";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  pluginJs.configs.recommended,
   { ignores: ["**/dist/"] },
   {
     files: ["**/*.js"],
@@ -19,8 +20,8 @@ export default [
       "@stylistic/js/object-curly-spacing": ["error", "always"],
       "@stylistic/js/arrow-spacing": ["error", { before: true, after: true }],
       "no-console": 0,
+      "no-unused-vars": "off",
     },
   },
   { languageOptions: { globals: { ...globals.node } } },
-  pluginJs.configs.recommended,
 ];
